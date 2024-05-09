@@ -1,6 +1,6 @@
 // 中文emoji  这些目前没有使用
 
-let items = [];
+const items = [];
 items.push({ label: "🎉", code: ':tada:', description: "庆祝 (初次提交)"});
 items.push({ label: "✨", code: ':sparkles:', description: "火花 (引入新功能)"});
 items.push({ label: "🔖", code: ':bookmark:', description: "书签 (发行/版本标签)"});

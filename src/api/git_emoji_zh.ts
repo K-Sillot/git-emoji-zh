@@ -5,7 +5,7 @@ export interface Emoji {
   readonly description: any
   readonly name: any
 }
-let emojis: Array<Emoji> = [
+const emojis: Array<Emoji> = [
     {
         "emoji": "🎉",
         "entity": "&#x1f3a8;",

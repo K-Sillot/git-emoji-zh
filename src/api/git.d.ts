@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Uri, SourceControlInputBox, Event, CancellationToken } from 'vscode';
+import { type Uri, SourceControlInputBox, type Event, CancellationToken } from 'vscode';
 
 export interface Git {
 	readonly path: string;
@@ -13,10 +13,10 @@ export interface InputBox {
 	value: string;
 }
 
-export const enum RefType {
-	Head,
-	RemoteHead,
-	Tag
+export enum RefType {
+	Head = 0,
+	RemoteHead = 1,
+	Tag = 2
 }
 
 export interface Ref {
@@ -57,26 +57,26 @@ export interface Remote {
 	readonly isReadOnly: boolean;
 }
 
-export const enum Status {
-	INDEX_MODIFIED,
-	INDEX_ADDED,
-	INDEX_DELETED,
-	INDEX_RENAMED,
-	INDEX_COPIED,
+export enum Status {
+	INDEX_MODIFIED = 0,
+	INDEX_ADDED = 1,
+	INDEX_DELETED = 2,
+	INDEX_RENAMED = 3,
+	INDEX_COPIED = 4,
 
-	MODIFIED,
-	DELETED,
-	UNTRACKED,
-	IGNORED,
-	INTENT_TO_ADD,
+	MODIFIED = 5,
+	DELETED = 6,
+	UNTRACKED = 7,
+	IGNORED = 8,
+	INTENT_TO_ADD = 9,
 
-	ADDED_BY_US,
-	ADDED_BY_THEM,
-	DELETED_BY_US,
-	DELETED_BY_THEM,
-	BOTH_ADDED,
-	BOTH_DELETED,
-	BOTH_MODIFIED
+	ADDED_BY_US = 10,
+	ADDED_BY_THEM = 11,
+	DELETED_BY_US = 12,
+	DELETED_BY_THEM = 13,
+	BOTH_ADDED = 14,
+	BOTH_DELETED = 15,
+	BOTH_MODIFIED = 16
 }
 
 export interface Change {
@@ -201,7 +201,7 @@ export interface GitExtension {
 	getAPI(version: 1): API;
 }
 
-export const enum GitErrorCodes {
+export enum GitErrorCodes {
 	BadConfigFile = 'BadConfigFile',
 	AuthenticationFailed = 'AuthenticationFailed',
 	NoUserNameConfigured = 'NoUserNameConfigured',

@@ -1,4 +1,4 @@
-import { Emoji } from '../git_emoji_zh'
+import type { Emoji } from '../git_emoji_zh'
 
 export function use_label(emoji: Emoji) {
   return {
